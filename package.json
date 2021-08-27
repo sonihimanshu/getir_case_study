@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "getir assignment API",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "server": "DB_USER_NAME=challengeUser DB_USER_PASSWORD=WUMglwNBaydH8Yvu DB_SERVER=challenge-xzwqd.mongodb.net DB_NAME=getir-case-study node -r esm server.js",
     "test": "run tests"

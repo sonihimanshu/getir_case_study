@@ -15,7 +15,8 @@
                 "DB_USER_NAME": "challengeUser",
                 "DB_USER_PASSWORD": "WUMglwNBaydH8Yvu",
                 "DB_SERVER": "challenge-xzwqd.mongodb.net",
-                "DB_NAME": "getir-case-study"
+                "DB_NAME": "getir-case-study",
+                "PORT": "3000"
             },
             "runtimeArgs": [
                 "-r",
