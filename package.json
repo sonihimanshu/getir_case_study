@@ -1,0 +1,17 @@
+{
+  "name": "getir_assignment",
+  "version": "1.0.0",
+  "description": "getir assignment API",
+  "main": "server.js",
+  "scripts": {
+    "server": "DB_USER_NAME=challengeUser DB_USER_PASSWORD=WUMglwNBaydH8Yvu DB_SERVER=challenge-xzwqd.mongodb.net DB_NAME=getir-case-study node -r esm server.js",
+    "test": "run tests"
+  },
+  "author": "himanshu soni",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.1"
+  }
+}
