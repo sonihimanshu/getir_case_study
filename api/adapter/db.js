@@ -1,7 +1,7 @@
-import recordModel from './Model/Record';
+const recordModel = require('./Model/Record.js');
 
 // this function will fetch data from DB based on given filter dates
-async function getData(startDate, endDate) {
+function getData(startDate, endDate) {
     return recordModel.find({
         createdAt: {
             $gte: new Date(startDate).toISOString(),
@@ -10,4 +10,4 @@ async function getData(startDate, endDate) {
     });
 }
 
-export { getData };
+module.exports = { getData };

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 // Schema for 'record' collection in DB
 const RSchema = new mongoose.Schema(
@@ -9,4 +9,4 @@ const RSchema = new mongoose.Schema(
 	}
 )
 
-export default mongoose.model('Record', RSchema);
+module.exports = mongoose.model('Record', RSchema);

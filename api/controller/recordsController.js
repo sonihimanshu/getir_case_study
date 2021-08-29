@@ -1,15 +1,10 @@
-import { getData } from '../adapter/db';
-import express from 'express';
-const app = express();
-app.use(express.json())
-
+const { getData } = require('../adapter/db.js');
 
 // this is the function to handle incoming request.
-app.post('/records/search', async (request, response) => {
-    try {
-        const { startDate, endDate, minCount, maxCount } = request.body;
-        // Validation can be added here if needed and request can be rejected with HTTP Status Bad Request (400)
-        const records = await getData(startDate, endDate);
+function searchRecords(request, response) {
+    const { startDate, endDate, minCount, maxCount } = request.body;
+    // Validation can be added here if needed and request can be rejected with HTTP Status Bad Request (400)
+    getData(startDate, endDate).then((records) => {
         const resBody = { code: 0, msg: 'success', records: [] };
         records.forEach((r) => {
             let countTotal = 0;
@@ -25,9 +20,11 @@ app.post('/records/search', async (request, response) => {
         });
 
         response.send(resBody);
-    } catch (error) {
-        response.status(500).send({ code: 500, msg: 'Failure' });
-    }
-});
+    }).catch((err) => {
+        // full error can also be logged here.
+        console.log(err.message);
+        response.send(500, { code: 500, msg: 'Failure' });
+    });
+}
 
-export default app;
+module.exports = { searchRecords };
